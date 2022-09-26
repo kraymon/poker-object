@@ -2,8 +2,8 @@ package fr.pantheonsorbonne.cri;
 
 public class Card {
  
-    public String couleur;
-    public String valeur;
+    private String couleur;
+    private String valeur;
 
     public Card(String valeur,String couleur){
         this.valeur = valeur;
