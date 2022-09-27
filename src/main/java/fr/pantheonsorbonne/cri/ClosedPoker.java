@@ -11,11 +11,12 @@ public class ClosedPoker {
         p2.setHand(Deck.newRandomHand());
         p3.setHand(Deck.newRandomHand());
 
-        p1.getHandString();
-        //p1.getCardsToDiscard();
+        
+        p1.getCardsToDiscard();
         //p1.getHandString();
-        p2.getHandString();
-        p3.getHandString();
+    
+        //p2.getCardsToDiscard();
+         //p3.getHandString();
 
 
         /* 
