@@ -30,25 +30,48 @@ public class Player {
             System.out.println("Entrer le numero de la carte que vous souhaitez echanger : ");
             int indexDiscard = sc.nextInt();
             card[i]=hand[indexDiscard];
+            hand[indexDiscard]=null;
         }
+
+
 
         return card;
 
     }
 
+    
     public void addCard(Card[] newCard){
         //à definire
+        for(Card c : newCard){
+            for(int i =0;i<this.hand.length;i++){
+                if(this.hand[i]==null){
+                    this.hand[i]=c;
+                    break;
+                }
+            }
+        }
+        getHandString();
 
     }
 
     public void getHandString(){
         //à definire
+
         int i = 0;
         for(Card c : this.hand){
+            if(c!=null){
                 System.out.println(c.getValeur()+" "+c.getCouleur()+" ("+i+")");
-                i++;
+            }
+            else{
+                System.out.println("null");
+            }
+            i++;
         }
             
+    }
+
+    public void beats(Player b){
+
     }
 
     
