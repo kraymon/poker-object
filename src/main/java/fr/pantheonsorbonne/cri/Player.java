@@ -22,16 +22,16 @@ public class Player {
 
     Scanner sc = new Scanner(System.in);
     public Card[] getCardsToDiscard(){
-        //à definire
-        //for(Card)
+        getHandString();
         int nbDiscard = sc.nextInt();
         Card[] card = new Card[nbDiscard];
-        for(int i=0; i<nbDiscard; i++){
+        for(int i =0; i<nbDiscard;i++){
+            System.out.println("Entrer le numero de la carte que vous souhaitez echanger : ");
             int indexDiscard = sc.nextInt();
             card[i]=hand[indexDiscard];
         }
 
-        
+        return card;
 
     }
 
@@ -42,18 +42,16 @@ public class Player {
 
     public void getHandString(){
         //à definire
-
-        for(Card i : this.hand){
-            if(i!=null){
-                System.out.println(i.getValeur()+" "+i.getCouleur());
-            }
-            else{
-                System.out.println("null");
-            }
+        int i = 0;
+        for(Card c : this.hand){
+                System.out.println(c.getValeur()+" "+c.getCouleur()+" ("+i+")");
+                i++;
         }
+            
     }
-
-    
-
-    
 }
+
+    
+
+    
+
