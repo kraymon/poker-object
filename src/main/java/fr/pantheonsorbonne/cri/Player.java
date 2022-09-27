@@ -73,6 +73,9 @@ public class Player {
     public boolean beats(Player b){
         String combinaisonB= getCombinaison(b.hand); //Brelan / PAIRE / CARRE / RIEN
         String combinaisonA= getCombinaison(this.hand);//Brelan / PAIRE / CARRE / RIEN
+        String valeurA = getValeurCombinaison(this.hand,combinaisonA);
+        String valeurB = getValeurCombinaison(b.hand,combinaisonB);
+
 
         if (compareCombinaison(combinaisonA,combinaisonB).equals(combinaisonA)){
             return true;
@@ -83,43 +86,56 @@ public class Player {
         }
 
         else{
+            if(compareValeur(combinaisonA,combinaisonB).equals(combinaisonA)){
+                return true;
+            }
 
+            else{
+                return false;
+            }
         }
 
 
 
-        //getCombinaison(une main) : donne les combinaison (paire, brelan, carre), renvoie String.
+        //getCombinaison(une main) : donne les combinaison (paire, brelan, carre, rien), renvoie String.
         //compareCombinaison(2 combinaison(String))=donne la combinaison gagante(String)
         //compareValeur(2 valeur(String)): donne la valeur gagnante(String)
         //getValeurCombinaison(hand,combinaison) : retourne une valeur (String)
     }
 
-    public String getCombinaison(Card[] main){
+    public String[] getCombinaison(Card[] main){
         int countMax=1;
+        String valeur ="";
         for(Card c : main){
             int count=0;
             for(Card c2 : main){
                 if(c.getValeur().equals(c2.getValeur())){
                     count++;
+
                 }
             }
             if(count>countMax){
                 countMax=count;
+                valeur = c.getValeur();
             }
         }
         if(countMax==2){
-            return "pair";
+            String[] combi ={"pair",valeur};
+            return combi;
         }
 
         else if(countMax==3){
-            return "brelan";
+            String[] combi ={"brelan",valeur};
+            return combi;
         }
 
         else if(countMax==4){
-            return "carre";
+            String[] combi ={"carre",valeur};
+            return combi;
         }
 
-        return "rien";
+        String[] combi ={"rien",valeur};
+        return combi;
         
     }
     public int valeurCombinaison(String combi){
