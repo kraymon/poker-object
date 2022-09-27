@@ -22,7 +22,7 @@ public class Player {
 
     Scanner sc = new Scanner(System.in);
     public Card[] getCardsToDiscard(){
-        getHandString();
+        System.out.println(getHandString());
         System.out.println("Entrer le nombre de carte que vous souhaitez echanger : ");
         int nbDiscard = sc.nextInt();
         Card[] card = new Card[nbDiscard];
@@ -50,31 +50,29 @@ public class Player {
                 }
             }
         }
-        getHandString();
+        System.out.println(getHandString());
 
     }
 
-    public void getHandString(){
+    public String getHandString(){
         //à definire
 
-        int i = 0;
+        String main="";
+        int i =0;
         for(Card c : this.hand){
-            if(c!=null){
-                System.out.println(c.getValeur()+" "+c.getCouleur()+" ("+i+")");
-            }
-            else{
-                System.out.println("null");
-            }
-            i++;
+                main+= c.getValeur()+" "+c.getCouleur()+" ("+i+")\n";
+                i++;
+
         }
+        return main;
             
     }
 
     public boolean beats(Player b){
-        String combinaisonB= getCombinaison(b.hand); //Brelan / PAIRE / CARRE / RIEN
-        String combinaisonA= getCombinaison(this.hand);//Brelan / PAIRE / CARRE / RIEN
-        String valeurA = getValeurCombinaison(this.hand,combinaisonA);
-        String valeurB = getValeurCombinaison(b.hand,combinaisonB);
+        String combinaisonB= getCombinaison(b.hand)[0]; //Brelan / PAIRE / CARRE / RIEN
+        String combinaisonA= getCombinaison(this.hand)[0];//Brelan / PAIRE / CARRE / RIEN
+        String valeurA = getCombinaison(this.hand)[1];
+        String valeurB = getCombinaison(b.hand)[1];
 
 
         if (compareCombinaison(combinaisonA,combinaisonB).equals(combinaisonA)){
@@ -86,7 +84,7 @@ public class Player {
         }
 
         else{
-            if(compareValeur(combinaisonA,combinaisonB).equals(combinaisonA)){
+            if(compareValeur(valeurA,valeurB).equals(valeurA)){
                 return true;
             }
 
@@ -105,19 +103,22 @@ public class Player {
 
     public String[] getCombinaison(Card[] main){
         int countMax=1;
+        String valeur="";
         for(Card c : main){
             int count=0;
-            String valeur ="";
             for(Card c2 : main){
                 if(c.getValeur().equals(c2.getValeur())){
                     count++;
-
                 }
             }
+
             if(count>countMax){
                 countMax=count;
                 valeur = c.getValeur();
             }
+
+
+
             
         }
         if(countMax==2){
@@ -139,6 +140,7 @@ public class Player {
         return combi;
         
     }
+
     public int valeurCombinaison(String combi){
         if(combi.equals("carre")){
             return 4;
@@ -226,10 +228,6 @@ public class Player {
             return 4;
         }
 
-        else if(valeur.equals("CINQ")){
-            return 4;
-        }
-
         else if(valeur.equals("QUATRE")){
             return 3;
         }
@@ -238,7 +236,7 @@ public class Player {
             return 2;
         }
 
-        else if(valeur.equals("DEUX")){
+        else{
             return 1;
         }
     }
@@ -265,8 +263,8 @@ public class Player {
         
 
 
-    }
 }
+
 
     
 
