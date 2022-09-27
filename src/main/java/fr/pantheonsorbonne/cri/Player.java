@@ -105,9 +105,9 @@ public class Player {
 
     public String[] getCombinaison(Card[] main){
         int countMax=1;
-        String valeur ="";
         for(Card c : main){
             int count=0;
+            String valeur ="";
             for(Card c2 : main){
                 if(c.getValeur().equals(c2.getValeur())){
                     count++;
@@ -118,6 +118,7 @@ public class Player {
                 countMax=count;
                 valeur = c.getValeur();
             }
+            
         }
         if(countMax==2){
             String[] combi ={"pair",valeur};
@@ -164,6 +165,104 @@ public class Player {
         else{
             return "draw";
         }
+
+
+    }
+
+    public String compareValeur(String valeur1,String valeur2){
+        int val1=valeurValeur(valeur1);
+        int val2=valeurValeur(valeur2);
+
+        if(val1>val2){
+            return valeur1;
+        }
+        else if(val1<val2){
+            return valeur2;
+        }
+        else{
+            return "draw";
+        }
+
+    }
+
+    public int valeurValeur(String valeur){
+        if(valeur.equals("AS")){
+            return 13;
+        }
+
+        else if(valeur.equals("ROI")){
+            return 12;
+        }
+
+        else if(valeur.equals("DAME")){
+            return 11;
+        }
+
+        else if(valeur.equals("VALET")){
+            return 10;
+        }
+
+        else if(valeur.equals("DIX")){
+            return 9;
+        }
+
+        else if(valeur.equals("NEUF")){
+            return 8;
+        }
+
+        else if(valeur.equals("HUIT")){
+            return 7;
+        }
+
+        else if(valeur.equals("SEPT")){
+            return 6;
+        }
+
+        else if(valeur.equals("SIX")){
+            return 5;
+        }
+
+        else if(valeur.equals("CINQ")){
+            return 4;
+        }
+
+        else if(valeur.equals("CINQ")){
+            return 4;
+        }
+
+        else if(valeur.equals("QUATRE")){
+            return 3;
+        }
+
+        else if(valeur.equals("TROIS")){
+            return 2;
+        }
+
+        else if(valeur.equals("DEUX")){
+            return 1;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
 
 
     }
