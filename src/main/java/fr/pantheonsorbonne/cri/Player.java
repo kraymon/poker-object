@@ -21,13 +21,14 @@ public class Player {
 
 
     Scanner sc = new Scanner(System.in);
-    public void getCardsToDiscard(){
+    public Card[] getCardsToDiscard(){
         //à definire
         //for(Card)
         int nbDiscard = sc.nextInt();
+        Card[] card = new Card[nbDiscard];
         for(int i=0; i<nbDiscard; i++){
             int indexDiscard = sc.nextInt();
-            hand[indexDiscard]=null;
+            card[i]=hand[indexDiscard];
         }
 
         
