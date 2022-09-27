@@ -1,4 +1,5 @@
 package fr.pantheonsorbonne.cri;
+import java.util.Scanner;
 
 public class Player {
     private String name;
@@ -20,15 +21,27 @@ public class Player {
     public void getCardsToDiscard(){
         //à definire
         //for(Card)
+        Scanner sc = new Scanner(System.in);
+        int[] changer = new int[5];
+
+        
+
     }
 
-    public void addCard(){
+    public void addCard(Card[] newCard){
         //à definire
+
     }
 
     public void getHandString(){
         //à definire
+
+        for(Card i : this.hand){
+            System.out.println(i.getValeur()+" "+i.getCouleur());
+        }
     }
+
+    
 
     
 }
