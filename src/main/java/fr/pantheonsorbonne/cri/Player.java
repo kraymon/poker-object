@@ -23,6 +23,7 @@ public class Player {
     Scanner sc = new Scanner(System.in);
     public Card[] getCardsToDiscard(){
         getHandString();
+        System.out.println("Entrer le nombre de carte que vous souhaitez echanger : ");
         int nbDiscard = sc.nextInt();
         Card[] card = new Card[nbDiscard];
         for(int i =0; i<nbDiscard;i++){
@@ -49,6 +50,8 @@ public class Player {
         }
             
     }
+
+    
 }
 
     
