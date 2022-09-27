@@ -1,5 +1,6 @@
 package fr.pantheonsorbonne.cri;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Player {
     private String name;
@@ -18,11 +19,16 @@ public class Player {
         this.hand=main;
     }
 
+
+    Scanner sc = new Scanner(System.in);
     public void getCardsToDiscard(){
         //à definire
         //for(Card)
-        Scanner sc = new Scanner(System.in);
-        int[] changer = new int[5];
+        int nbDiscard = sc.nextInt();
+        for(int i=0; i<nbDiscard; i++){
+            int indexDiscard = sc.nextInt();
+            hand[indexDiscard]=null;
+        }
 
         
 
@@ -37,7 +43,12 @@ public class Player {
         //à definire
 
         for(Card i : this.hand){
-            System.out.println(i.getValeur()+" "+i.getCouleur());
+            if(i!=null){
+                System.out.println(i.getValeur()+" "+i.getCouleur());
+            }
+            else{
+                System.out.println("null");
+            }
         }
     }
 

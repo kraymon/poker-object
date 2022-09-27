@@ -14,17 +14,18 @@ public class Deck {
         Card[] hand = new Card[5];
 
         for(int i =0; i<5; i++){
-            int indexCouleur = random.nextInt(3);
-            int indexValeur = random.nextInt(12);
-            //i--
-
-            while(repetition.contains(valeur[indexValeur]+couleur[indexValeur])){
-                indexCouleur = random.nextInt(3);
-                indexValeur = random.nextInt(12);
+            int indexCouleur = random.nextInt(4);
+            int indexValeur = random.nextInt(13);
+            
+             
+            while(repetition.contains(valeur[indexValeur]+couleur[indexCouleur])){
+                indexCouleur = random.nextInt(4);
+                indexValeur = random.nextInt(13);
             }
-            Card carte = new Card(valeur[indexValeur],couleur[indexValeur]);
+            
+            Card carte = new Card(valeur[indexValeur],couleur[indexCouleur]);
             hand[i] = carte;
-            repetition.add(valeur[indexValeur]+couleur[indexValeur]);
+            repetition.add(valeur[indexValeur]+couleur[indexCouleur]);
             }
         /* 
         Card carte1 = new Card(valeur[random.nextInt(12)],couleur[random.nextInt(3)]);
@@ -38,20 +39,28 @@ public class Deck {
         return hand;
     }
 
-
+    
     public static Card[] getRandomCards(int n){
         Random random = new Random();
         Card[] hand = new Card[n];
 
          
         for(int i =0; i<n; i++){
-            Card newCarte = new Card(valeur[random.nextInt(12)],couleur[random.nextInt(3)]);
+            int indexCouleur = random.nextInt(4);
+            int indexValeur = random.nextInt(13);
+
+            while(repetition.contains(valeur[indexValeur]+couleur[indexCouleur])){
+                indexCouleur = random.nextInt(4);
+                indexValeur = random.nextInt(13);
+            }
+
+            Card newCarte = new Card(valeur[indexValeur],couleur[indexCouleur]);
             hand[i] = newCarte;
-                
+              
         }
 
         return hand;
-    /* 
+     /* 
         if(n==1){
             Card newCarte1 = new Card(valeur[random.nextInt(12)],couleur[random.nextInt(3)]);
             hand[0]= newCarte1;
@@ -99,10 +108,11 @@ public class Deck {
             return hand;
         }
 
-*/
-    } 
-        
+    */
+    }
 }
+        
+
 
 
 

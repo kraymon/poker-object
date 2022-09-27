@@ -12,8 +12,12 @@ public class ClosedPoker {
         p3.setHand(Deck.newRandomHand());
 
         p1.getHandString();
+        //p1.getCardsToDiscard();
+        //p1.getHandString();
         p2.getHandString();
         p3.getHandString();
+
+
         /* 
         //returns the cards the players want to discard and get new ones
         Card[] cardsP1=p1.getCardsToDiscard();
