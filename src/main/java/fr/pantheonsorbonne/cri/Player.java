@@ -70,7 +70,60 @@ public class Player {
             
     }
 
-    public void beats(Player b){
+    public boolean beats(Player b){
+        String combinaisonB= getCombinaison(b.hand); //Brelan / PAIRE / CARRE / RIEN
+        String combinaisonA= getCombinaison(this.hand);//Brelan / PAIRE / CARRE / RIEN
+
+        if (compareCombinaison(combinaisonA,combinaisonB).equals(combinaisonA)){
+            return true;
+        }
+
+        else if (compareCombinaison(combinaisonA,combinaisonB).equals(combinaisonB)){
+            return false
+        }
+
+        else{
+
+        }
+
+
+
+        //getCombinaison(une main) : donne les combinaison (paire, brelan, carre), renvoie String.
+        //compareCombinaison(2 combinaison(String))=donne la combinaison gagante(String)
+        //compareValeur(2 valeur(String)): donne la valeur gagnante(String)
+        //getValeurCombinaison(hand,combinaison) : retourne une valeur (String)
+    }
+
+    public String getCombinaison(Card[] main){
+        int countMax=1;
+        for(Card c : main){
+            int count=0;
+            for(Card c2 : main){
+                if(c.getValeur().equals(c2.getValeur())){
+                    count++;
+                }
+            }
+            if(count>countMax){
+                countMax=count;
+            }
+        }
+        if(countMax==2){
+            return "pair";
+        }
+
+        else if(countMax==3){
+            return "brelan";
+        }
+
+        else if(countMax==4){
+            return "carre";
+        }
+
+        return "rien";
+        
+    }
+
+    public String compareCombinaison(String combiA, String combiB){
 
     }
 
