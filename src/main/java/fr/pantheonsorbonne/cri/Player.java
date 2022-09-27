@@ -79,7 +79,7 @@ public class Player {
         }
 
         else if (compareCombinaison(combinaisonA,combinaisonB).equals(combinaisonB)){
-            return false
+            return false;
         }
 
         else{
@@ -122,12 +122,35 @@ public class Player {
         return "rien";
         
     }
-
+    public int valeurCombinaison(String combi){
+        if(combi.equals("carre")){
+            return 4;
+        }
+        else if(combi.equals("brelan")){
+            return 3;
+        }
+        else if(combi.equals("pair")){
+            return 2;
+        }
+        else{
+            return 1;
+        }
+    }
     public String compareCombinaison(String combiA, String combiB){
+        int valA = valeurCombinaison(combiA);
+        int valB = valeurCombinaison(combiB);
+        if(valA>valB){
+            return combiA;
+        }
+        else if(valA<valB){
+            return combiB;
+        }
+        else{
+            return "draw";
+        }
+
 
     }
-
-    
 }
 
     
