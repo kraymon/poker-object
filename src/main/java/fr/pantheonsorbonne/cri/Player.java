@@ -103,7 +103,9 @@ public class Player {
 
     public String[] getCombinaison(Card[] main){
         int countMax=1;
+        ArrayList <Card> carteMaxVal = new ArrayList<>();
         String valeur="";
+        int countPaire=0;
         for(Card c : main){
             int count=0;
             for(Card c2 : main){
@@ -117,10 +119,17 @@ public class Player {
                 valeur = c.getValeur();
             }
 
-
-
+            if(count==2){
+                carteMaxVal.add(c);
+                countPaire++;
+            }
             
         }
+
+        if(countPaire==2){
+            valeur = compareValeur(carteMaxVal.get(0).getValeur(),carteMaxVal.get(1).getValeur());
+        }
+
         if(countMax==2){
             String[] combi ={"pair",valeur};
             return combi;
