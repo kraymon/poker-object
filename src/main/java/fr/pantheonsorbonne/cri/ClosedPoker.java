@@ -33,15 +33,15 @@ public class ClosedPoker {
 
         //check who wins
         if(p1.beats(p2) && p1.beats(p3)){
-            System.out.println("P1 wins with hand /n"+p1.getHandString());
+            System.out.println("P1 wins with hand \n"+p1.getHandString());
         }
 
         else if(p2.beats(p1) && p2.beats(p3)){
-            System.out.println("P2 wins with hand /n"+p2.getHandString());
+            System.out.println("P2 wins with hand \n"+p2.getHandString());
         }
 
-        else if(p3.beats(p1) && p3.beats(p3)){
-            System.out.println("P3 wins with hand /n"+p2.getHandString());
+        else if(p3.beats(p1) && p3.beats(p2)){
+            System.out.println("P3 wins with hand \n"+p3.getHandString());
         }
         else{
             System.out.println("there is a draw");
