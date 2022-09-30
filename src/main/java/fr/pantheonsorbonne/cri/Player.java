@@ -10,11 +10,10 @@ public class Player {
         this.name=name;
     } 
 
-    
+
 
     private Card[] hand = new Card[5];
     public void setHand(Card[] main){
-        //à definire
         this.hand=main;
     }
 
@@ -40,7 +39,6 @@ public class Player {
 
     
     public void addCard(Card[] newCard){
-        //à definire
         for(Card c : newCard){
             for(int i =0;i<this.hand.length;i++){
                 if(this.hand[i]==null){
@@ -54,8 +52,6 @@ public class Player {
     }
 
     public String getHandString(){
-        //à definire
-
         String main="";
         int i =0;
         for(Card c : this.hand){
@@ -92,12 +88,6 @@ public class Player {
             }
         }
 
-
-
-        //getCombinaison(une main) : donne les combinaison (paire, brelan, carre, rien), renvoie String.
-        //compareCombinaison(2 combinaison(String))=donne la combinaison gagante(String)
-        //compareValeur(2 valeur(String)): donne la valeur gagnante(String)
-        //getValeurCombinaison(hand,combinaison) : retourne une valeur (String)
     }
 
     public String[] getCombinaison(Card[] main){
@@ -194,7 +184,7 @@ public class Player {
         }
 
     }
-
+    
     public int valeurValeur(String valeur){
         if(valeur.equals("AS")){
             return 13;
