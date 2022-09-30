@@ -10,9 +10,7 @@ public class Player {
         this.name=name;
     } 
 
-    public String getName(){
-        return this.name;
-    }
+    
 
     private Card[] hand = new Card[5];
     public void setHand(Card[] main){
