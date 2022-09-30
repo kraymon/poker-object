@@ -3,19 +3,17 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Player {
+    public static final int handSize=5;
     private String name;
 
     public Player(String name){
         this.name=name;
     } 
 
-    public String getName(){
-        return this.name;
-    }
+
 
     private Card[] hand = new Card[5];
     public void setHand(Card[] main){
-        //à definire
         this.hand=main;
     }
 
@@ -41,7 +39,6 @@ public class Player {
 
     
     public void addCard(Card[] newCard){
-        //à definire
         for(Card c : newCard){
             for(int i =0;i<this.hand.length;i++){
                 if(this.hand[i]==null){
@@ -55,8 +52,6 @@ public class Player {
     }
 
     public String getHandString(){
-        //à definire
-
         String main="";
         int i =0;
         for(Card c : this.hand){
@@ -93,12 +88,6 @@ public class Player {
             }
         }
 
-
-
-        //getCombinaison(une main) : donne les combinaison (paire, brelan, carre, rien), renvoie String.
-        //compareCombinaison(2 combinaison(String))=donne la combinaison gagante(String)
-        //compareValeur(2 valeur(String)): donne la valeur gagnante(String)
-        //getValeurCombinaison(hand,combinaison) : retourne une valeur (String)
     }
 
     public String[] getCombinaison(Card[] main){
@@ -180,9 +169,9 @@ public class Player {
 
     }
 
-    public String compareValeur(String valeur1,String valeur2){
-        int val1=valeurValeur(valeur1);
-        int val2=valeurValeur(valeur2);
+    public static String compareValeur(String valeur1,String valeur2){
+        int val1= getIntValueForCardValue(valeur1);
+        int val2= getIntValueForCardValue(valeur2);
 
         if(val1>val2){
             return valeur1;
@@ -195,8 +184,8 @@ public class Player {
         }
 
     }
-
-    public int valeurValeur(String valeur){
+    //on verra comment faire ça avec une enum après
+    public static int getIntValueForCardValue(String valeur){
         if(valeur.equals("AS")){
             return 13;
         }

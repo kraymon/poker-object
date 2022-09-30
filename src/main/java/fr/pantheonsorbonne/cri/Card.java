@@ -1,5 +1,6 @@
 package fr.pantheonsorbonne.cri;
 
+
 public class Card {
  
     private String couleur;
@@ -18,13 +19,7 @@ public class Card {
         return this.couleur;
     }
 
-    public void setValeur(String valeur){
-     this.valeur = valeur;
-    }
 
-    public void setCouleur(String couleur){
-     this.couleur = couleur;
-    }
 
 
 
