@@ -1,12 +1,13 @@
 package fr.pantheonsorbonne.cri;
+import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 
 public class Deck {
 
-    static String[] couleur = {"COEUR","CARREAU","PIQUE","TREFLE"};
-    static String[] valeur = {"AS","ROI","DAME","VALET","DIX","NEUF","HUIT","SEPT","SIX","CINQ","QUATRE","TROIS","DEUX"};
-    static ArrayList<String> repetition=new ArrayList<String>() ;
+    final static String[] couleur = {"COEUR","CARREAU","PIQUE","TREFLE"};
+    final static String[] valeur = {"AS","ROI","DAME","VALET","DIX","NEUF","HUIT","SEPT","SIX","CINQ","QUATRE","TROIS","DEUX"};
+    static List<String> repetition=new ArrayList<>() ;
 
 
     public static Card[] newRandomHand(){
