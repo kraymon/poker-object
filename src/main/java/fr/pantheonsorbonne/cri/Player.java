@@ -170,8 +170,8 @@ public class Player {
     }
 
     public static String compareValeur(String valeur1,String valeur2){
-        int val1=valeurValeur(valeur1);
-        int val2=valeurValeur(valeur2);
+        int val1= getIntValueForCardValue(valeur1);
+        int val2= getIntValueForCardValue(valeur2);
 
         if(val1>val2){
             return valeur1;
@@ -185,7 +185,7 @@ public class Player {
 
     }
     //on verra comment faire ça avec une enum après
-    public static int valeurValeur(String valeur){
+    public static int getIntValueForCardValue(String valeur){
         if(valeur.equals("AS")){
             return 13;
         }
