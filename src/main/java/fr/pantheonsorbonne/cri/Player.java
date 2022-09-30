@@ -169,7 +169,7 @@ public class Player {
 
     }
 
-    public String compareValeur(String valeur1,String valeur2){
+    public static String compareValeur(String valeur1,String valeur2){
         int val1=valeurValeur(valeur1);
         int val2=valeurValeur(valeur2);
 
@@ -184,8 +184,8 @@ public class Player {
         }
 
     }
-    
-    public int valeurValeur(String valeur){
+    //on verra comment faire ça avec une enum après
+    public static int valeurValeur(String valeur){
         if(valeur.equals("AS")){
             return 13;
         }
