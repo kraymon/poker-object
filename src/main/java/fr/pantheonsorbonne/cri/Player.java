@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Player {
+    public static final int handSize=5;
     private String name;
 
     public Player(String name){

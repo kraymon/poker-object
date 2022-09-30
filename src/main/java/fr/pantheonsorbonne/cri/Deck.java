@@ -12,9 +12,9 @@ public class Deck {
 
     public static Card[] newRandomHand(){
         Random random = new Random();
-        Card[] hand = new Card[5];
+        Card[] hand = new Card[Player.handSize];
 
-        for(int i =0; i<5; i++){
+        for(int i =0; i<Player.handSize; i++){
             int indexCouleur = random.nextInt(4);
             int indexValeur = random.nextInt(13);
             
